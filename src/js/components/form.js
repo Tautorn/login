@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class Form extends Component {
 	render() {
 		return (
-			<form className="form-horizontal" method="post" action="">
+			<form className="form-horizontal" method="get" action={this.props.action}>
 				<div className="form-group">
 				    <div className="col-sm-12">
 				  		<div className="inner__addon right--addon">
@@ -23,7 +23,7 @@ class Form extends Component {
 				<div className="form-group">
 				    <div className="col-sm-12">
 					    <button type="submit" className="btn btn-default button__primary">Sign in</button>
-				  		<a className="form__forgot-password">Lost your password?</a>
+				  		<a className="form__forgot-password">{this.props.forgot}</a>
 				    </div>
 				</div>
 			</form>

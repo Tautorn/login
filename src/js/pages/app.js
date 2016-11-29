@@ -1,28 +1,20 @@
 import React, { Component } from 'react';
-// import Modal from './js/components/modal';
-import Form from './js/components/form';
-import { Navbar} from 'react-bootstrap';
+import Form from '../../js/components/form';
+import NavApp from '../../js/components/navbar'; 
 
 class App extends Component {
   render() {
     return (
         <main>
-            <Navbar inverse fixedTop>
-                <Navbar.Header>
-                    <Navbar.Brand>
-                        <a href="/">React App</a>
-                    </Navbar.Brand>
-                    <Navbar.Toggle />
-                </Navbar.Header>
-            </Navbar>
+            <NavApp link={'/dashboard'} label={'Sign In'} />
             <div className="container">
                 <div className="modal__default shadow--2d">
                     <div className="modal__header">
-                        <span className="modal__header--title"> Login Form</span>
+                        <span className="modal__header--title">Login Form</span>
                         <span className="modal__close">x</span>
                     </div>
                     <div className="modal__content">
-                        <Form />
+                        <Form action={'dashboard'} forgot={'Lost your password?'}/>
                     </div>
                 </div>
             </div>
