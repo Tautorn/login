@@ -1,16 +1,21 @@
 import React, { Component } from 'react';
 // import Modal from './js/components/modal';
 import Form from './js/components/form';
+import { Navbar} from 'react-bootstrap';
 
 class App extends Component {
   render() {
     return (
         <main>
-            <nav className="navbar navbar-light bg-faded">
-                <a className="navbar-brand float-right" href="#">Navbar</a>
-            </nav>
+            <Navbar inverse fixedTop>
+                <Navbar.Header>
+                    <Navbar.Brand>
+                        <a href="/">React App</a>
+                    </Navbar.Brand>
+                    <Navbar.Toggle />
+                </Navbar.Header>
+            </Navbar>
             <div className="container">
-
                 <div className="modal__default shadow--2d">
                     <div className="modal__header">
                         <span className="modal__header--title"> Login Form</span>

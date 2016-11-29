@@ -1,14 +1,13 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
+import React, { Component } from 'react';
 
+class Dashboard extends Component {
+  render() {
+    return (
+        <main>
+            <h1> Hello </h1>
+        </main>
+    );
+  }
+}
 
-// import $ from 'jquery';
-
-// import './third-party/vendor/jquery.mockjax.js';
-
-
-ReactDOM.render(
-  <App />,
-  document.getElementById('dashboard')
-);
+export default Dashboard;
