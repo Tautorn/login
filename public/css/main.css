@@ -1,0 +1,113 @@
+/* Component -----------------------------------------------------------------*/
+.form__forgot-password {
+  padding-left: 20px; }
+
+.button__primary {
+  background: #8c387a;
+  background: -moz-radial-gradient(center, ellipse cover, #8c387a 0%, #872c72 40%, #801b67 100%);
+  background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, #8c387a), color-stop(40%, #872c72), color-stop(100%, #801b67));
+  background: -webkit-radial-gradient(center, ellipse cover, #8c387a 0%, #872c72 40%, #801b67 100%);
+  background: -o-radial-gradient(center, ellipse cover, #8c387a 0%, #872c72 40%, #801b67 100%);
+  background: -ms-radial-gradient(center, ellipse cover, #8c387a 0%, #872c72 40%, #801b67 100%);
+  background: radial-gradient(ellipse at center, #8c387a 0%, #872c72 40%, #801b67 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8c387a', endColorstr='#801b67', GradientType=1 );
+  color: white;
+  width: 100px; }
+
+.button__primary:hover {
+  background: #808080;
+  color: white; }
+
+.inner__addon {
+  position: relative;
+  color: #808080; }
+
+/* style icon */
+.inner__addon .glyphicon {
+  position: absolute;
+  padding: 10px;
+  pointer-events: none; }
+
+/* align icon */
+.left--addon .glyphicon {
+  left: 0px; }
+
+.right--addon .glyphicon {
+  right: 0px; }
+
+/* add padding  */
+.left--addon input {
+  padding-left: 30px; }
+
+.right--addon input {
+  padding-right: 30px; }
+
+.modal__default {
+  background-color: white;
+  min-height: 200px;
+  width: 400px;
+  left: 0;
+  margin: 0 auto;
+  position: absolute;
+  right: 0;
+  top: 30%; }
+
+.modal__header {
+  background: #8c387a;
+  background: -moz-radial-gradient(center, ellipse cover, #8c387a 0%, #872c72 40%, #801b67 100%);
+  background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, #8c387a), color-stop(40%, #872c72), color-stop(100%, #801b67));
+  background: -webkit-radial-gradient(center, ellipse cover, #8c387a 0%, #872c72 40%, #801b67 100%);
+  background: -o-radial-gradient(center, ellipse cover, #8c387a 0%, #872c72 40%, #801b67 100%);
+  background: -ms-radial-gradient(center, ellipse cover, #8c387a 0%, #872c72 40%, #801b67 100%);
+  background: radial-gradient(ellipse at center, #8c387a 0%, #872c72 40%, #801b67 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8c387a', endColorstr='#801b67', GradientType=1 );
+  color: white;
+  display: block;
+  font-size: 16px;
+  height: 50px;
+  line-height: 50px;
+  padding: 0 20px; }
+
+.modal__content {
+  padding: 20px; }
+
+.modal__close {
+  padding-right: 20px;
+  position: absolute;
+  right: 0; }
+
+/* Page ----------------------------------------------------------------------*/
+/* Skins ---------------------------------------------------------------------*/
+/* Helpers -------------------------------------------------------------------*/
+.shadow--2d {
+  -webkit-box-shadow: 2px 2px 5px 0px rgba(50, 50, 50, 0.75);
+  -moz-box-shadow: 2px 2px 5px 0px rgba(50, 50, 50, 0.75);
+  box-shadow: 2px 2px 5px 0px rgba(50, 50, 50, 0.75); }
+
+.skin--primary {
+  background: #8c387a;
+  background: -moz-radial-gradient(center, ellipse cover, #8c387a 0%, #872c72 40%, #801b67 100%);
+  background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, #8c387a), color-stop(40%, #872c72), color-stop(100%, #801b67));
+  background: -webkit-radial-gradient(center, ellipse cover, #8c387a 0%, #872c72 40%, #801b67 100%);
+  background: -o-radial-gradient(center, ellipse cover, #8c387a 0%, #872c72 40%, #801b67 100%);
+  background: -ms-radial-gradient(center, ellipse cover, #8c387a 0%, #872c72 40%, #801b67 100%);
+  background: radial-gradient(ellipse at center, #8c387a 0%, #872c72 40%, #801b67 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8c387a', endColorstr='#801b67', GradientType=1 ); }
+
+html {
+  height: 100%; }
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background: #872573;
+  min-height: 100%;
+  background: #8c387a;
+  background: -moz-radial-gradient(center, ellipse cover, #8c387a 0%, #872c72 40%, #801b67 100%);
+  background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, #8c387a), color-stop(40%, #872c72), color-stop(100%, #801b67));
+  background: -webkit-radial-gradient(center, ellipse cover, #8c387a 0%, #872c72 40%, #801b67 100%);
+  background: -o-radial-gradient(center, ellipse cover, #8c387a 0%, #872c72 40%, #801b67 100%);
+  background: -ms-radial-gradient(center, ellipse cover, #8c387a 0%, #872c72 40%, #801b67 100%);
+  background: radial-gradient(ellipse at center, #8c387a 0%, #872c72 40%, #801b67 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8c387a', endColorstr='#801b67', GradientType=1 ); }

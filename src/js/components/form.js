@@ -16,7 +16,7 @@ class Form extends Component {
 				    <div className="col-sm-12">
 				  		<div className="inner__addon right--addon">
 	    					<i className="glyphicon glyphicon-lock"></i>
-							<input type="password" className="form-control" placeholder="Password" required="required"/>
+							<input type="password" className="form-control" placeholder="Password" min="6" required="required"/>
 						</div>
 				    </div>
 				</div>
