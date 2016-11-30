@@ -1,11 +1,19 @@
 import React, { Component } from 'react';
 import NavApp from '../../js/components/navbar';
+import DataTable from '../../js/components/data-table';
 
 // SERVICE REST
 var data = {
 	user: 'Bruno Carneiro',
 	job: 'Front-End'
 };
+
+var list = [
+	{id:1, name: 'Bruno Carneiro', email: 'brunocarneirofs@gmail.com', city: 'Uberaba', job: 'Front-End'},
+	{id:2, name: 'Fulano de Tal', email: 'fulanotal@hotmail.com.br', city: 'Uberlândia', job: 'Engineer'},
+	{id:3, name: 'Ciclano', email: 'ciclano@gmail.com', city: 'Campinas', job: 'Architect'},
+	{id:4, name: 'Beltrano', email: 'beltrano@yahoo.com', city: 'San Diego', job: 'Manager'}
+]
 
 class Dashboard extends Component {
 
@@ -15,27 +23,7 @@ class Dashboard extends Component {
 	            <NavApp link={'/signout'} label={'Sign Out'} />
 	            <div className="container">
 	            	<h1 className="gutter--t40 align--center"> Bem-Vindo</h1>
-
-	            	<table className="table">
-		                <thead>
-		                    <tr>
-		                        <th>ID</th>
-		                        <th>Name</th>
-		                        <th>E-mail</th>
-		                        <th>Subject</th>
-		                        <th>Messenger</th>
-		                    </tr>
-		                </thead>
-		                <tbody>
-		                	<tr>
-				                <th scope="row">1</th>
-				                <td>Bruno</td>
-				                <td>brunocarneirofs@gmail.com</td>
-				                <td>teste</td>
-				                <td>Messenger</td>
-				            </tr>
-		                </tbody>
-		            </table>
+	            	<DataTable list={list} />
 	            </div> 
 	        </main>
 	    );
