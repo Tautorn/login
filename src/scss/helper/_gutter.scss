@@ -1,0 +1,113 @@
+/*
+	GUTTERS - Padronização de preenchimentos ----------------------------------
+
+Gutter é utilizado para distanciamento de componentes. Espaçamentos internos de
+componente continuam a ser definidos através da propriedade padding nas
+definições do próprio componente.
+
+Ex: O seletor "form__field--spacing-top", é perfeito para uso do gutter,
+"--spacing-top" não deveria ser especialização, o gutter resolve este problema.
+
+Seria abusivo o uso de gutter para todo tipo de espaçamento. Enfim, gutter é
+para distanciamento de componentes diferentes e não partes de um mesmo componente.
+Senão estaríamos apenas trocando a propriedade padding por uma classe injetada
+no HTML. O objetivo não é esse.
+
+Gutter como helper evita especializações de componentes que estariam mais
+relacionadas ao contexto no qual o componente foi inserido e não a si próprio.
+Não se encaixa no caso de usar um scss de page porque este tipo de ajuste acaba
+sendo recorrente em diversos outros componentes daí fica claro que é digno que
+se tornar um helper.
+
+Resumindo, padding interno não usa gutter, para distância em relação à outros
+componentes, use gutter.
+
+MIXINS:
+gutter, gutter-vertical, gutter-horizontal
+
+VALORES:
+O arquivo _vars.scss especifica as distâncias permitidas para uso conjunto com
+mixins de gutter.
+
+FAQ:
+#1 Qual critério para determinar o que é gutter e o que é padding do componente?
+
+	R: O gutter, quando o é, não deve afetar visualmente o componente, se afetar
+	poder ser que o gutter está	sendo atribuído no elemento incorreto,
+	precisando de um container para recebê-lo. Normalmente o componente é
+	acomodado dentro de algum componente wrapper ou coluna ou linha.
+
+*/
+
+/*
+	gutter()
+	- Gera classes do tipo gutter--md-t20
+	- Podem ser especificados top, right, bottom, left
+	- As propriedades devem obedecer a ordem top, right, bottom, left
+	- Parâmetro $breakpoint é "opcional"
+
+	Exemplo #1:
+		.gutter--md-b80
+		@include gutter((bottom: $gutter-80), 'md');
+
+	Exemplo #2:
+		.gutter--md-t30-r20-b80-l20
+
+		$map: (
+			top: $gutter-30,
+			right: $gutter-20,
+			bottom: $gutter-80,
+			left: $gutter-120
+		);
+
+		@include gutter($map, 'md');
+*/
+@mixin gutter($map, $breakpoint: '') {
+	@include rule-tokenize($map, 'padding', $breakpoint);
+}
+
+
+/*
+	gutter-vertical()
+	- Gera classes do tipo gutter--md-t20-b20
+	- Fachada para gutter que predefine (top, bottom) com mesmo valor
+
+	Exemplo #1:
+		.gutter--md-t80-b80
+		@include gutter-vertical($gutter-80, 'md');
+
+*/
+@mixin gutter-vertical($value, $breakpoint: '') {
+
+	$map: (top: $value, bottom: $value);
+
+	@include gutter($map, $breakpoint);
+}
+
+
+/*
+	gutter-horizontal()
+	- Gera classes do tipo gutter--md-r20-l20
+	- Fachada para gutter que predefine (right, left) com mesmo valor
+
+	Exemplo #1:
+		.gutter--md-r80-l80
+		@include gutter-horizontal($gutter-80, 'md');
+*/
+@mixin gutter-horizontal($value, $breakpoint: '') {
+
+	$map: (right: $value, left: $value);
+
+	@include gutter($map, $breakpoint);
+}
+
+
+.gutter {
+
+    // .gutter--t20
+    @include gutter((top: $gutter-20));
+
+    // .gutter--t40
+    @include gutter((top: $gutter-40));
+
+}

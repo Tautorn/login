@@ -1,0 +1,9 @@
+/*
+	Typo
+	this: @include typo-placeholder( $font-dosis, 30px, light );
+	generate: %font-dosis-light-30
+	use: @include use-typo( $font-lato, 36px, 'light', md);
+*/
+
+/* Lato */
+@include typo-placeholder( $font-lato, 14px, regular );

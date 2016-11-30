@@ -1,8 +1,10 @@
+@import 'common';
+
 /* Component -----------------------------------------------------------------*/
 
 @import 'components/form',
 		'components/button',
-		'components/inner-addon',
+		'components/inner-addon', 
 		'components/modal';
 
 
@@ -13,9 +15,13 @@
 
 
 /* Helpers -------------------------------------------------------------------*/
-
+ 
 @import 'helper/shadow',
-		'helper/skin'; 
+		'helper/gutter',
+		'helper/skin',
+		'helper/no-padding',
+		'helper/display',
+		'helper/align'; 
   
  
 html {
@@ -37,4 +43,6 @@ body {
 	background: radial-gradient(ellipse at center, rgba(140,56,122,1) 0%, rgba(135,44,114,1) 40%, rgba(128,27,103,1) 100%);
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8c387a', endColorstr='#801b67', GradientType=1 );
 
+
+	color: white;
 }

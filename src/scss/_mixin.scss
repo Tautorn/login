@@ -1,0 +1,201 @@
+@function str-replace($string, $search, $replace: '') {
+	$index: str-index($string, $search);
+	$slice: $string;
+
+	@while $index {
+		$slice: if($index == 1, '', str-slice($slice, 0, $index - 1)) + $replace + str-slice($slice, $index + str-length($replace));
+		$index: str-index($slice, $search);
+	}
+
+	@return $slice;
+}
+
+@function normalize( $string ){
+	$string: str-replace( to-lower-case( $string ), ' ', '-' );
+
+	@return $string;
+}
+
+@function calculate-rem($size) {
+  	$remSize: $size / 16px;
+  	@return $remSize * 1rem;
+}
+
+@function strip-unit($value) {
+	@return $value / ($value * 0 + 1);
+}
+
+@mixin property-rem($property, $value) {
+  	#{$property}: $value;
+  	#{$property}: calculate-rem($value);
+}
+
+@function parseInt($n) {
+  	@return $n / ($n * 0 + 1);
+}
+
+@function map-tokenize($map, $dir) {
+	@return str-slice($dir, 0, 1) + strip-unit(map-get($map, $dir));
+}
+
+@function token-prefixify($value, $isEmpty, $prefix) {
+	$prefix: if($isEmpty, '', $prefix);
+	@return $prefix + $value;
+}
+
+@function selector-tokenize($map, $breakpoint) {
+
+	$selector: '';
+	$isEmpty: true;
+
+	@if (str-length($breakpoint) > 0) {
+		$selector: $selector + $breakpoint;
+		$isEmpty: false;
+	}
+
+	@each $prop, $value in $map {
+		$token: map-tokenize($map, $prop);
+		$selector: $selector + token-prefixify($token, $isEmpty, '-');
+    	$isEmpty: false;
+	}
+
+	@return $selector;
+}
+
+@mixin rule-map($selector, $property, $map) {
+	&--#{$selector} {
+		@each $k, $v in $map {
+			#{$property + '-' + $k}: $v;
+		}
+	}
+}
+
+@mixin rule-tokenize($data, $property, $breakpoint) {
+
+	$selector: selector-tokenize($data, $breakpoint);
+
+	@include rule-map($selector, $property, $data);
+}
+
+@mixin to-rem($property, $values) {
+
+	$px : ();
+	$rem: ();
+
+	@each $value in $values {
+
+		@if $value == 0 or $value == auto {
+
+		  	$px : append($px , $value);
+		  	$rem: append($rem, $value);
+
+		}@else if type-of($value) == number {
+
+		   	$px : append($px,  $value);
+		    $rem: append($rem, calculate-rem($value));
+
+		} @else {
+
+		  	$px : append($px,  $value);
+		 	$rem: append($rem, $value);
+
+		}
+	}
+
+	@if $px == $rem {
+
+		#{$property}: $px;
+
+	} @else {
+
+		#{$property}: $px;
+		#{$property}: $rem;
+
+	}
+}
+
+@mixin truncate( $width: 100px ) {
+	@extend %truncate;
+	width: $width;
+}
+
+@mixin generate-sprite-class( $map, $prefix: 'sprite--' ) {
+	@each $file in sprite-names($map) {
+
+	    .#{$prefix}#{$file} {
+	        background-position: sprite-position($map, $file);
+	        //height: image-height(sprite-file($map, $file));
+			//width: image-width(sprite-file($map, $file));
+	    }
+	}
+}
+
+@mixin circle ( $border: '3px solid', $size: 0px, $color: $color-concrete, $bg: transparent   ) {
+	@include border-radius( 50% );
+    border: $border $color;
+    padding: 0;
+    width: $size;
+    height: $size;
+    background-color: $bg;
+}
+
+@mixin opaque-background( $color, $opacity: 1 ) {
+	@include opacity( $opacity );
+	background-color: rgba( $color, $opacity );
+}
+
+@mixin circle ( $border, $size: 0px, $bg: transparent   ) {
+	@include border-radius( 50% );
+    border: $border;
+    padding: 0;
+    width: $size;
+    height: $size;
+    background-color: $bg;
+}
+
+@mixin size( $size ) {
+	width: $size;
+    height: $size;
+}
+
+@mixin sprite-background( $file, $sprite: $sprite-normal-map ) {
+    background-position: sprite-position( $sprite, $file );
+}
+
+@mixin typo-placeholder( $family, $size: 16px, $weight: regular ) {
+
+	$fweight: 400;
+	$name: normalize( $family );
+	$fsize: strip-unit($size);
+
+	@if $weight == 'light' {
+		$fweight: 300;
+	} @else if $weight=='bold' {
+		$fweight: 700;
+	}
+
+	//.font-#{$name}-#{$weight}-#{$fsize} { color: red; }
+
+	%font-#{$name}-#{$weight}-#{$fsize} {
+		font-family: $family;
+		font-weight: $fweight;
+		@include to-rem( 'font-size', $size );
+	}
+}
+
+@mixin use-typo( $family, $size, $weight: regular ) {
+	$name: normalize( $family );
+	@extend %font-#{$name}-#{$weight}-#{strip-unit($size)};
+
+}
+
+@mixin use-sprite( $name, $hasRetina: true ) {
+	@extend .sprite;
+	@extend .sprite--#{$name};
+
+	@if not $hasRetina {
+
+		background-size: inherit;
+
+	}
+}

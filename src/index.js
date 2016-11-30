@@ -14,6 +14,8 @@ import '../public/css/main.css';
 
 // import $ from 'jquery';
 
+// window.jQuery = $;
+
 // import './third-party/vendor/jquery.mockjax.js';
 
 ReactDOM.render((
