@@ -358,7 +358,9 @@ html, body {
   height: 100%; }
 
 body {
-  font-family: sans-serif;
+  font-family: sans-serif; }
+
+.login__page {
   background: #cb60b3;
   background: -moz-radial-gradient(center, ellipse cover, #cb60b3 0%, #571043 90%, #521240 100%);
   background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, #cb60b3), color-stop(90%, #571043), color-stop(100%, #521240));

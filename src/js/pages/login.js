@@ -11,6 +11,8 @@ class Login extends Component {
             showResults: true
         };
         this.handleClose = this.handleClose.bind(this);
+
+        document.body.classList.add('login__page');
     }
 
     handleClose(e) {

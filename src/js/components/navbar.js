@@ -7,9 +7,7 @@ class NavApp extends Component {
 		return (
 			<Navbar inverse collapseOnSelect>
 			    <Navbar.Header>
-			    	<div className="logo__header">
-			        	<img src={zup} role="presentation" />
-			        </div>
+			      <img src={zup} role="presentation" />
 			      <Navbar.Toggle />
 			    </Navbar.Header>
 			    <Navbar.Collapse>
