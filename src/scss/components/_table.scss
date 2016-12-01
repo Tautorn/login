@@ -1,7 +1,7 @@
 .table {
 
 	tr:hover {
-		background: rgba(140,56,122,1);
+		background: $color-accent;
 		color: $color-white;
 
 		.table--icon {
@@ -11,6 +11,6 @@
 
 
 	&--icon {
-		color: rgba(140,56,122,1);
+		color: $color-accent; 
 	}
 }
