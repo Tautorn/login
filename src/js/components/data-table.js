@@ -11,28 +11,55 @@ const TableRows = (list) => {
 };
 
 class DataTable extends Component {
+
+	constructor(props) {
+		super(props);
+    	this.state = {
+    		rows: this.props.list,
+    		cloneRows: this.props.list
+    	};
+	    this.handleFilterChange = this.handleFilterChange.bind(this);
+	}
+
+	handleFilterChange(e) {
+
+        this.setState({
+            rows: !!e.target.value ? this.state.cloneRows.filter(list => list.id == e.target.value) : this.state.cloneRows
+        });
+    }
+
   render() {
     return (
-        <main>
-            <div className="row">
-            	<table className="table">
-	                <thead>
-	                    <tr>
-	                        <th>ID</th>
-	                        <th>Name</th>
-	                        <th>E-mail</th>
-	                        <th>City</th>
-	                        <th>Job</th>
-	                    </tr>
-	                </thead>
-	                <tbody>
-	                	{this.props.list.map((list, i) =>
-                			<TableRows key={i} id={list.id} name={list.name} email={list.email} city={list.city} job={list.job} />
-	                	)}	               	
-	                </tbody>
-	            </table>
-            </div>
-        </main>
+        <div>
+	    	<div className="col-md-4 no-padding spacer--b40">
+	            <div id="custom-search-input">
+	                <div className="input-group col-md-12">
+	                    <input type="text" className="form-control input-lg" placeholder="Type ID number" onChange={this.handleFilterChange}  />
+	                    <span className="input-group-btn">
+	                        <button className="btn btn-info btn-lg button__primary" type="button">
+	                            <i className="glyphicon glyphicon-search"></i>
+	                        </button>
+	                    </span>
+	                </div> 
+	            </div>
+	        </div>
+        	<table className="table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>E-mail</th>
+                        <th>City</th>
+                        <th>Job</th>
+                    </tr>
+                </thead>
+                <tbody>
+                	{this.state.rows.map((list, i) =>
+            			<TableRows key={i} id={list.id} name={list.name} email={list.email} city={list.city} job={list.job} />
+                	)}	               	
+                </tbody>
+            </table>
+        </div>
     );
   }
 } 

@@ -110,4 +110,13 @@ FAQ:
     // .gutter--t40
     @include gutter((top: $gutter-40));
 
+    // .gutter--l20
+    @include gutter((left: $gutter-20));
+
+    // .gutter--b20
+    @include gutter((left: $gutter-20));
+    
+    // .gutter--b40
+    @include gutter((left: $gutter-40));
+
 }

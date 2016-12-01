@@ -1,27 +1,24 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Router, Route, Link, browserHistory } from 'react-router';
+import { Router, Route, browserHistory } from 'react-router';
 
-import App from './js/pages/app';
+// -- Pages
+import Login from './js/pages/login';
 import Dashboard from './js/pages/dashboard';
 import Signout from './js/pages/signout';
+import Forgot from './js/pages/forgot';
 
-// import { Button } from 'react-bootstrap';
+// -- Third Party 
 import 'bootstrap/dist/css/bootstrap.css';
-import 'bootstrap/dist/css/bootstrap-theme.css';
 
+// -- App CSS
 import '../public/css/main.css';
 
-// import $ from 'jquery';
-
-// window.jQuery = $;
-
-// import './third-party/vendor/jquery.mockjax.js';
-
 ReactDOM.render((
-  <Router history={browserHistory}>
-    <Route path="/" component={App}></Route>
+  <Router history={browserHistory}> 
+    <Route path="/" component={Login}></Route>
     <Route path="/dashboard" component={Dashboard}></Route>
     <Route path="/sign-out" component={Signout}></Route>
+    <Route path="/forgot" component={Forgot}></Route>
   </Router>
 ), document.getElementById('root'));

@@ -1,38 +1,44 @@
 @import 'common';
 
+
 /* Component -----------------------------------------------------------------*/
 
 @import 'components/form',
 		'components/button',
 		'components/inner-addon', 
-		'components/modal';
-
+		'components/modal', 
+		'components/page', 
+		'components/bar', 
+		'components/table', 
+		'components/logo';
 
 /* Page ----------------------------------------------------------------------*/
-
-
-/* Skins ---------------------------------------------------------------------*/
 
 
 /* Helpers -------------------------------------------------------------------*/
  
 @import 'helper/shadow',
 		'helper/gutter',
+		'helper/spacer',
 		'helper/skin',
 		'helper/no-padding',
 		'helper/display',
 		'helper/align'; 
+
+/* Custom ----------------------------------------------------------------------*/
+
+@import 'bootstrap-custom';
   
- 
-html {
-  height: 100%;
+html  {
+	box-sizing: $box-model;
+}
+
+html, body {
+	margin:0;padding:0;height:100%;
 }
 
 body {
-	margin: 0;
-	padding: 0;
-	font-family: sans-serif;background: rgba(135,37,115,1);
-	min-height: 100%;
+	font-family: sans-serif;
 
 	background: rgba(140,56,122,1);
 	background: -moz-radial-gradient(center, ellipse cover, rgba(140,56,122,1) 0%, rgba(135,44,114,1) 40%, rgba(128,27,103,1) 100%);
@@ -43,6 +49,4 @@ body {
 	background: radial-gradient(ellipse at center, rgba(140,56,122,1) 0%, rgba(135,44,114,1) 40%, rgba(128,27,103,1) 100%);
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8c387a', endColorstr='#801b67', GradientType=1 );
 
-
-	color: white;
 }

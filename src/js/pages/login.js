@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 import Form from '../../js/components/form';
 import NavApp from '../../js/components/navbar'; 
 
-class App extends Component {
+class Login extends Component {
   render() {
     return (
-        <main>
+        <main className="skin--primary">
             <NavApp link={'/dashboard'} label={'Sign In'} />
             <div className="container">
                 <div className="modal__default shadow--2d">
@@ -14,7 +14,7 @@ class App extends Component {
                         <span className="modal__close">x</span>
                     </div>
                     <div className="modal__content">
-                        <Form action={'dashboard'} forgot={'Lost your password?'}/>
+                        <Form action={'dashboard'} forgot={'Lost your password?'} forgotLink={'/forgot'} />
                     </div>
                 </div>
             </div>
@@ -23,4 +23,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default Login;

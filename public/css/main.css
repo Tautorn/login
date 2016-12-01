@@ -23,9 +23,12 @@
   background: radial-gradient(ellipse at center, #8c387a 0%, #872c72 40%, #801b67 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8c387a', endColorstr='#801b67', GradientType=1 );
   color: white;
+  border: 1px solid #8c387a; }
+
+.button--1 {
   width: 100px; }
 
-.button__primary:hover {
+.button--1:hover {
   background: #808080;
   color: white; }
 
@@ -53,42 +56,63 @@
 .right--addon input {
   padding-right: 30px; }
 
-.modal__default {
+.modal {
+  color: white; }
+  .modal__default {
+    background-color: white;
+    min-height: 200px;
+    width: 400px;
+    left: 0;
+    margin: 0 auto;
+    position: absolute;
+    right: 0;
+    top: 30%; }
+  .modal__header {
+    background: #8c387a;
+    background: -moz-radial-gradient(center, ellipse cover, #8c387a 0%, #872c72 40%, #801b67 100%);
+    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, #8c387a), color-stop(40%, #872c72), color-stop(100%, #801b67));
+    background: -webkit-radial-gradient(center, ellipse cover, #8c387a 0%, #872c72 40%, #801b67 100%);
+    background: -o-radial-gradient(center, ellipse cover, #8c387a 0%, #872c72 40%, #801b67 100%);
+    background: -ms-radial-gradient(center, ellipse cover, #8c387a 0%, #872c72 40%, #801b67 100%);
+    background: radial-gradient(ellipse at center, #8c387a 0%, #872c72 40%, #801b67 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8c387a', endColorstr='#801b67', GradientType=1 );
+    color: white;
+    display: block;
+    font-size: 16px;
+    height: 50px;
+    line-height: 50px;
+    padding: 0 20px; }
+  .modal__content {
+    padding: 20px; }
+  .modal__close {
+    padding-right: 20px;
+    position: absolute;
+    right: 0; }
+
+.page {
   background-color: white;
-  min-height: 200px;
-  width: 400px;
-  left: 0;
-  margin: 0 auto;
-  position: absolute;
-  right: 0;
-  top: 30%; }
+  min-height: 100%;
+  height: 100%; }
 
-.modal__header {
-  background: #8c387a;
-  background: -moz-radial-gradient(center, ellipse cover, #8c387a 0%, #872c72 40%, #801b67 100%);
-  background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, #8c387a), color-stop(40%, #872c72), color-stop(100%, #801b67));
-  background: -webkit-radial-gradient(center, ellipse cover, #8c387a 0%, #872c72 40%, #801b67 100%);
-  background: -o-radial-gradient(center, ellipse cover, #8c387a 0%, #872c72 40%, #801b67 100%);
-  background: -ms-radial-gradient(center, ellipse cover, #8c387a 0%, #872c72 40%, #801b67 100%);
-  background: radial-gradient(ellipse at center, #8c387a 0%, #872c72 40%, #801b67 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8c387a', endColorstr='#801b67', GradientType=1 );
+#root {
+  min-height: 100%;
+  height: 100%; }
+
+.bar {
   color: white;
-  display: block;
-  font-size: 16px;
-  height: 50px;
-  line-height: 50px;
-  padding: 0 20px; }
+  margin-bottom: 40px;
+  margin-top: 0;
+  padding: 0;
+  padding: 10px 0; }
 
-.modal__content {
-  padding: 20px; }
+.table tr:hover {
+  background: #8c387a;
+  color: white; }
 
-.modal__close {
-  padding-right: 20px;
-  position: absolute;
-  right: 0; }
+.logo__header {
+  line-height: 50px; }
 
 /* Page ----------------------------------------------------------------------*/
-/* Skins ---------------------------------------------------------------------*/
 /* Helpers -------------------------------------------------------------------*/
 .shadow--2d {
   -webkit-box-shadow: 2px 2px 5px 0px rgba(50, 50, 50, 0.75);
@@ -183,6 +207,106 @@ FAQ:
 .gutter--t40 {
   padding-top: 40px; }
 
+.gutter--l20 {
+  padding-left: 20px; }
+
+.gutter--l20 {
+  padding-left: 20px; }
+
+.gutter--l40 {
+  padding-left: 40px; }
+
+/*
+	SPACERS - Padronização de preenchimentos ----------------------------------
+
+spacer é utilizado para distanciamento de componentes. Espaçamentos internos de
+componente continuam a ser definidos através da propriedade padding nas
+definições do próprio componente.
+
+Ex: O seletor "form__field--spacing-top", é perfeito para uso do spacer,
+"--spacing-top" não deveria ser especialização, o spacer resolve este problema.
+
+Seria abusivo o uso de spacer para todo tipo de espaçamento. Enfim, spacer é
+para distanciamento de componentes diferentes e não partes de um mesmo componente.
+Senão estaríamos apenas trocando a propriedade padding por uma classe injetada
+no HTML. O objetivo não é esse.
+
+spacer como helper evita especializações de componentes que estariam mais
+relacionadas ao contexto no qual o componente foi inserido e não a si próprio.
+Não se encaixa no caso de usar um scss de page porque este tipo de ajuste acaba
+sendo recorrente em diversos outros componentes daí fica claro que é digno que
+se tornar um helper.
+
+Resumindo, padding interno não usa spacer, para distância em relação à outros
+componentes, use spacer.
+
+MIXINS:
+spacer, spacer-vertical, spacer-horizontal
+
+VALORES:
+O arquivo _vars.scss especifica as distâncias permitidas para uso conjunto com
+mixins de spacer.
+
+FAQ:
+#1 Qual critério para determinar o que é spacer e o que é padding do componente?
+
+	R: O spacer, quando o é, não deve afetar visualmente o componente, se afetar
+	poder ser que o spacer está	sendo atribuído no elemento incorreto,
+	precisando de um container para recebê-lo. Normalmente o componente é
+	acomodado dentro de algum componente wrapper ou coluna ou linha.
+
+*/
+/*
+	spacer()
+	- Gera classes do tipo spacer--md-t20
+	- Podem ser especificados top, right, bottom, left
+	- As propriedades devem obedecer a ordem top, right, bottom, left
+	- Parâmetro $breakpoint é "opcional"
+
+	Exemplo #1:
+		.spacer--md-b80
+		@include spacer((bottom: $spacer-80), 'md');
+
+	Exemplo #2:
+		.spacer--md-t30-r20-b80-l20
+
+		$map: (
+			top: $spacer-30,
+			right: $spacer-20,
+			bottom: $spacer-80,
+			left: $spacer-120
+		);
+
+		@include spacer($map, 'md');
+*/
+/*
+	spacer-vertical()
+	- Gera classes do tipo spacer--md-t20-b20
+	- Fachada para spacer que predefine (top, bottom) com mesmo valor
+
+	Exemplo #1:
+		.spacer--md-t80-b80
+		@include spacer-vertical($spacer-80, 'md');
+
+*/
+/*
+	spacer-horizontal()
+	- Gera classes do tipo spacer--md-r20-l20
+	- Fachada para spacer que predefine (right, left) com mesmo valor
+
+	Exemplo #1:
+		.spacer--md-r80-l80
+		@include spacer-horizontal($spacer-80, 'md');
+*/
+.spacer--t20 {
+  margin-top: 20px; }
+
+.spacer--b20 {
+  margin-bottom: 20px; }
+
+.spacer--b40 {
+  margin-bottom: 40px; }
+
 .skin--primary {
   background: #8c387a;
   background: -moz-radial-gradient(center, ellipse cover, #8c387a 0%, #872c72 40%, #801b67 100%);
@@ -234,15 +358,21 @@ FAQ:
 .align--right {
   text-align: right !important; }
 
+/* Custom ----------------------------------------------------------------------*/
+.navbar {
+  border-radius: 0;
+  margin-bottom: 0; }
+
 html {
+  box-sizing: "border-box"; }
+
+html, body {
+  margin: 0;
+  padding: 0;
   height: 100%; }
 
 body {
-  margin: 0;
-  padding: 0;
   font-family: sans-serif;
-  background: #872573;
-  min-height: 100%;
   background: #8c387a;
   background: -moz-radial-gradient(center, ellipse cover, #8c387a 0%, #872c72 40%, #801b67 100%);
   background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, #8c387a), color-stop(40%, #872c72), color-stop(100%, #801b67));
@@ -250,5 +380,4 @@ body {
   background: -o-radial-gradient(center, ellipse cover, #8c387a 0%, #872c72 40%, #801b67 100%);
   background: -ms-radial-gradient(center, ellipse cover, #8c387a 0%, #872c72 40%, #801b67 100%);
   background: radial-gradient(ellipse at center, #8c387a 0%, #872c72 40%, #801b67 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8c387a', endColorstr='#801b67', GradientType=1 );
-  color: white; }
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8c387a', endColorstr='#801b67', GradientType=1 ); }

@@ -11,10 +11,14 @@
 		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8c387a', endColorstr='#801b67', GradientType=1 );
 		
 		color: white;
+		border: 1px solid rgba(140,56,122,1);
+	}
+
+	&--1 {
 		width: 100px;
 	}
 
-	&__primary:hover {
+	&--1:hover {
 
 		background: #808080; 
 		color: white;
