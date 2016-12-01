@@ -10,7 +10,7 @@
 		background: radial-gradient(ellipse at center, rgba(140,56,122,1) 0%, rgba(135,44,114,1) 40%, rgba(128,27,103,1) 100%);
 		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8c387a', endColorstr='#801b67', GradientType=1 );
 		
-		color: white;
+		color: $color-white;
 		border: 1px solid rgba(140,56,122,1);
 	}
 
@@ -21,7 +21,7 @@
 	&--1:hover {
 
 		background: #808080; 
-		color: white;
+		color: $color-white;
 
 	}
 

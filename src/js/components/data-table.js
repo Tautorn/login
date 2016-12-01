@@ -7,6 +7,10 @@ const TableRows = (list) => {
         <td>{list.email}</td>
         <td>{list.city}</td>
         <td>{list.job}</td>
+        <td>
+            <i className="glyphicon glyphicon-trash gutter--r10 table--icon"></i>
+            <i className="glyphicon glyphicon-pencil table--icon"></i>
+        </td>
     </tr>)
 };
 
@@ -51,6 +55,7 @@ class DataTable extends Component {
                         <th>E-mail</th>
                         <th>City</th>
                         <th>Job</th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody>

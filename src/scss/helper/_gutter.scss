@@ -118,5 +118,11 @@ FAQ:
     
     // .gutter--b40
     @include gutter((left: $gutter-40));
+    
+    // .gutter--r5
+    @include gutter((right: $gutter-5));
+    
+    // .gutter--r10
+    @include gutter((right: $gutter-10));
 
 }

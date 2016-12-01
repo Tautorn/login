@@ -1,43 +1,7 @@
-/* Responsive --------------------------------------------------------------------*/
-
-// $mq-enabled: false;
-
-/* 569px */
-$mq-xsm: 35.6em;
-
-/* 640px */
-$mq-sm: 40.1em;
-
-/* 768px */
-$mq-md: 48.1em;
-//$mq-lg: 60.1em; //TMP
-
-/* 1024px */
-$mq-lg: 64.1em;
-
-/* 1280px */
-$mq-xl: 80.1em;
-
-
 /* Colors (http://chir.ag/projects/name-that-color) --------------------------*/
 
 $color-black: #000000;
 $color-white: #FFFFFF;
-$color-wild-sand: #F5F5F5;
-$color-corn-flower: #6195ED;
-$color-corn-flower-blue: #CCE2F0;
-$color-denim: #117fca;
-$color-dove-gray: #666666;
-$color-dusty-gray: #949494;
-$color-endeavour: #0067B2;
-$color-monza: #b80021;
-$color-punch: #dc3732;
-$color-dove-gray-2: #636363;
-$color-scarpa-flow: #59595a;
-$color-silver-chalice: #ababab;
-$color-silver: #bfbfbf;
-$color-alto: #D5D5D5;
-$color-gallery: #ECECEC;
 
 
 /* Fonts ---------------------------------------------------------------------*/
@@ -53,6 +17,8 @@ $box-model: 'border-box';
 
 /* Gutters -------------------------------------------------------------------*/
 
+$gutter-5: 5px;
+$gutter-10: 10px;
 $gutter-20: 20px;
 $gutter-40: 40px;
 $gutter-80: 80px;

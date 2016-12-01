@@ -1,10 +1,10 @@
 .modal {
 
-	color: white;
+	color: $color-white;
 
 	&__default {
 
-		background-color: white;
+		background-color: $color-white;
 		min-height: 200px;
 		width: 400px;
 	    left: 0;
@@ -27,7 +27,7 @@
 		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8c387a', endColorstr='#801b67', GradientType=1 );
 
 
-		color: white;
+		color: $color-white;
 		display: block;
 		font-size: 16px;
 		height: 50px;

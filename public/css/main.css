@@ -1,10 +1,4 @@
 @charset "UTF-8";
-/* Responsive --------------------------------------------------------------------*/
-/* 569px */
-/* 640px */
-/* 768px */
-/* 1024px */
-/* 1280px */
 /* Colors (http://chir.ag/projects/name-that-color) --------------------------*/
 /* Fonts ---------------------------------------------------------------------*/
 /* Config --------------------------------------------------------------------*/
@@ -22,7 +16,7 @@
   background: -ms-radial-gradient(center, ellipse cover, #8c387a 0%, #872c72 40%, #801b67 100%);
   background: radial-gradient(ellipse at center, #8c387a 0%, #872c72 40%, #801b67 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8c387a', endColorstr='#801b67', GradientType=1 );
-  color: white;
+  color: #FFFFFF;
   border: 1px solid #8c387a; }
 
 .button--1 {
@@ -30,7 +24,7 @@
 
 .button--1:hover {
   background: #808080;
-  color: white; }
+  color: #FFFFFF; }
 
 .inner__addon {
   position: relative;
@@ -57,9 +51,9 @@
   padding-right: 30px; }
 
 .modal {
-  color: white; }
+  color: #FFFFFF; }
   .modal__default {
-    background-color: white;
+    background-color: #FFFFFF;
     min-height: 200px;
     width: 400px;
     left: 0;
@@ -76,7 +70,7 @@
     background: -ms-radial-gradient(center, ellipse cover, #8c387a 0%, #872c72 40%, #801b67 100%);
     background: radial-gradient(ellipse at center, #8c387a 0%, #872c72 40%, #801b67 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8c387a', endColorstr='#801b67', GradientType=1 );
-    color: white;
+    color: #FFFFFF;
     display: block;
     font-size: 16px;
     height: 50px;
@@ -90,7 +84,7 @@
     right: 0; }
 
 .page {
-  background-color: white;
+  background-color: #FFFFFF;
   min-height: 100%;
   height: 100%; }
 
@@ -99,7 +93,7 @@
   height: 100%; }
 
 .bar {
-  color: white;
+  color: #FFFFFF;
   margin-bottom: 40px;
   margin-top: 0;
   padding: 0;
@@ -107,7 +101,12 @@
 
 .table tr:hover {
   background: #8c387a;
-  color: white; }
+  color: #FFFFFF; }
+  .table tr:hover .table--icon {
+    color: #FFFFFF; }
+
+.table--icon {
+  color: #8c387a; }
 
 .logo__header {
   line-height: 50px; }
@@ -215,6 +214,12 @@ FAQ:
 
 .gutter--l40 {
   padding-left: 40px; }
+
+.gutter--r5 {
+  padding-right: 5px; }
+
+.gutter--r10 {
+  padding-right: 10px; }
 
 /*
 	SPACERS - Padronização de preenchimentos ----------------------------------

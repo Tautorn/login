@@ -2,7 +2,15 @@
 
 	tr:hover {
 		background: rgba(140,56,122,1);
-		color: white;
+		color: $color-white;
+
+		.table--icon {
+			color: $color-white;
+		}
 	}
 
+
+	&--icon {
+		color: rgba(140,56,122,1);
+	}
 }

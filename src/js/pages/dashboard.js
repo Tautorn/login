@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import NavApp from '../../js/components/navbar';
 import DataTable from '../../js/components/data-table';
 
-// SERVICE REST
+// SERVICE REST - MOCK
 var data = {
 	user: 'Bruno Carneiro',
 	job: 'Front-End'
@@ -21,7 +21,7 @@ class Dashboard extends Component {
 	render() {
 	    return ( 
 	        <main className="page">
-	            <NavApp link={'/'} label={'Sign Out'} session={true} />
+	            <NavApp link={'/'} label={'Sign Out'} />
 	            <div className="align--left skin--primary bar">
 	            	<div className="container">
 	            		<h4 className="">Welcome - {data.user}</h4>
