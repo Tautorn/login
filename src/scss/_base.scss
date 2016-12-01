@@ -20,3 +20,7 @@ body {
 	background: radial-gradient(ellipse at center, rgba(203,96,179,1) 0%, rgba(87,16,67,1) 90%, rgba(82,18,64,1) 100%);
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cb60b3', endColorstr='#521240', GradientType=1 );
 } 
+
+.overflow {
+	overflow: auto;
+}

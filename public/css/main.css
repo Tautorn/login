@@ -70,6 +70,12 @@
     position: absolute;
     right: 0; }
 
+@media (max-width: 47em) {
+  .modal__default {
+    position: relative;
+    width: 100%;
+    margin-top: 20px; } }
+
 .page {
   background-color: #FFFFFF;
   min-height: 100%;
@@ -369,3 +375,6 @@ body {
   background: -ms-radial-gradient(center, ellipse cover, #cb60b3 0%, #571043 90%, #521240 100%);
   background: radial-gradient(ellipse at center, #cb60b3 0%, #571043 90%, #521240 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cb60b3', endColorstr='#521240', GradientType=1 ); }
+
+.overflow {
+  overflow: auto; }

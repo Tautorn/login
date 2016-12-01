@@ -24,7 +24,7 @@ class Login extends Component {
 
   render() {
     return (
-        <main className="skin--primary">
+        <main>
             <NavApp link={'/'} label={'Sign In'} />
             <div className="container">
                 <ToggleDisplay show={this.state.showResults}>

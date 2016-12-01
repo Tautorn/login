@@ -34,7 +34,7 @@ class DataTable extends Component {
 
   render() {
     return (
-        <div>
+        <div className="overflow">
 	    	<div className="col-md-4 no-padding spacer--b40">
 	            <div id="custom-search-input">
 	                <div className="input-group col-md-12">
